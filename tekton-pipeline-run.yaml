@@ -1,0 +1,11 @@
+apiVersion: tekton.dev/v1beta1
+kind: PipelineRun
+metadata:
+  name: open-flights
+spec:
+  pipelineRef:
+    name: open-flights
+  serviceAccountName: default
+  workspaces:
+    - name: source
+      emptyDir: {}
