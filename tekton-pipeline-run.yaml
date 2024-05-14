@@ -1,11 +1,16 @@
 apiVersion: tekton.dev/v1beta1
 kind: PipelineRun
 metadata:
-  name: open-flights
+  name: your-pipeline-run
 spec:
   pipelineRef:
-    name: open-flights
-  serviceAccountName: default
-  workspaces:
-    - name: source
-      emptyDir: {}
+    name: docker-build-and-push-pipeline
+  params:
+    - name: repo-url
+      value: 'https://github.com/sohailali31/open-flights.git'
+    - name: repo-revision
+      value: 'main'
+    - name: image-name
+      value: 'open-flights'
+    - name: docker-hub-username
+      value: 'open-flights'
