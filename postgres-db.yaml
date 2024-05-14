@@ -17,11 +17,11 @@ spec:
           image: postgres:14.1
           env:
             - name: POSTGRES_DB
-              value: budgy_development
+              value: openf_development
             - name: POSTGRES_USER
-              value: Budgy
+              value: openf
             - name: POSTGRES_PASSWORD
-              value: Budgy
+              value: openf
           ports:
             - containerPort: 5432
 ---
